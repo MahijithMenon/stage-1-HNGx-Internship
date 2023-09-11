@@ -5,7 +5,7 @@ app.get('/api', (req, res) => {
   const slackName = req.query.slack_name;
   const track = req.query.track;
 
-  const currentUTC = new Date().toISOString();
+  const currentUTC = new Date().toISOString().slice(0, -5) + 'Z';
   const response = {
     slack_name: slackName,
     current_day: new Date().toLocaleDateString('en-US', { weekday: 'long' }),
