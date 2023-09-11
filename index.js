@@ -8,7 +8,7 @@ app.get('/getInfo', (req, res) => {
   const currentUTC = new Date().toISOString();
   const response = {
     slack_name: slackName,
-    current_day: new Date().toLocaleDateString('en-US', { weekday }),
+    current_day: new Date().toLocaleDateString('en-US', { weekday: 'long' }),
     utc_time: currentUTC,
     track: track,
     github_file_url:
