@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 
 app.get('/getInfo', (req, res) => {
@@ -8,11 +8,12 @@ app.get('/getInfo', (req, res) => {
   const currentUTC = new Date().toISOString();
   const response = {
     slack_name: slackName,
-    current_day: new Date().toLocaleDateString('en-US', { weekday: 'long' }),
+    current_day: new Date().toLocaleDateString('en-US', { weekday }),
     utc_time: currentUTC,
     track: track,
-    github_file_url: 'https://github.com/username/repo/blob/main/file_name.ext',
-    github_repo_url: 'https://github.com/username/repo',
+    github_file_url:
+      'https://github.com/MahijithMenon/stage-1-HNGx-Internship/blob/main/index.js',
+    github_repo_url: 'https://github.com/MahijithMenon/stage-1-HNGx-Internship',
     status_code: 200,
   };
   res.json(response);
